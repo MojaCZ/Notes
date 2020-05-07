@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+
+    <p>Color of $rootScope: {{ color }}</p>
+
+    <div ng-controller="myCtrl" ng-init="first='John';a=1;b=2; names=['Petr', 'Jirka', 'Jan']">
+      <p>Name: <input type="text" ng-model="first"><input type="text" ng-model="second"> </p>
+      <p ng-bind="first"></p>
+      <p ng-bind="second"></p>
+      <h1>Hello {{ first | uppercase }}</h1>
+      <p>addition {{ a+b }}</p>
+      <p>Color of $scope {{ color }}</p>
+
+      <h1>this lists given list and display names</h1>
+      <ul>
+        <li ng-repeat="x in names"> {{ x }} </li> <!-- repeat tag -->
+      </ul>
+
+      <h2>this displays people ordered by town they are live in</h2>
+      <ul>
+        <li ng-repeat="x in people | orderBy:'town'"> {{ x.name + ' is from ' + x.town}} </li> <!-- repeat tag -->
+      </ul>
+
+      <h2>these displays only people from list which name contains i</h2>
+      <ul>
+        <li ng-repeat="x in people | filter:{name:'i'}"> {{ x.name + ' is from ' + x.town }} </li> <!-- repeat tag -->
+      </ul>
+
+      <p>Yours URL is: {{ myUrl }}</p>
+
+    </div>
+
+    <p>Color of $rootScope is still: {{ color }}</p>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.run(function($rootScope){
+          $rootScope.color = "blue"
+        })
+        app.controller('myCtrl', function($scope, $location){
+          $scope.color = "red";
+          $scope.myUrl = $location.absUrl();
+
+          $scope.people = [
+            {name: 'Lukas', town: 'Kladno'},
+            {name: 'Adam' , town: 'Zlin'},
+            {name: 'Pepa' , town: 'Praha'},
+            {name: 'Karel' , town: 'Beroun'},
+            {name: 'Dominika' , town: 'Rakovnik'},
+            {name: 'Dominik' , town: 'Nachod'},
+          ]
+        })
+    </script>
+
+  </body>
+</html>
