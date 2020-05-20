@@ -44,3 +44,13 @@ git status  *gives me info about branche, commits, ...*
 
 changes will commit only to branch I'm currently working at, when I switch to other branch, changes wont be there
 https://www.youtube.com/watch?v=QV0kVNvkMxc
+
+## Setting config
+In order not to have type user and password every time I'm pushing or pulling, I can edit `.git/config`
+
+```
+[remote "origin"]
+	url = https://user:password@github.com/MojaCZ/Notes.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	pushurl = https://user:password@github.com/MojaCZ/Notes.git
+```
