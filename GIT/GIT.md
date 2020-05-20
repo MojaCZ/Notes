@@ -1,3 +1,10 @@
+## .git/config
+```conf
+[user]
+	name = MojaCZ
+	email = lukas.posekany@gmail.com
+```
+
 ## New repository from folder
 
 create new repository on GitHub (do not initialize the new repo with README, licence or gitignore)
