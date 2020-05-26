@@ -64,6 +64,7 @@ Sie **sind** Frau Mozart, nicht wahr?
         <td></td><td class="word"></td>
     </tr>
 </table>
+<link href="./style.css" rel="stylesheet">
 
 **Hast** du einen Bruder?
 Er **hat** eine Schwester.
@@ -256,25 +257,3 @@ Ich **weiß** es nicht. 	Nevím to.
     </tr>
 </table>
 
-<style>
-table, td, tr {
-  border-collapse: separate !important;
-  text-align:center;
-  border: none;
-  background-color: white;
-}
-th {
-  border: 0px solid #c6cbd1 !important;
-  border-bottom: 1px solid #c6cbd1 !important;
-}
-td {
-  border: 0px solid black !important;
-}
-.hVertical {
-    font-weight: bold;
-    border-right: 1px solid lightgray !important;
-}
-.word {
-  text-align:left;
-}
-</style>

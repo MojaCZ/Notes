@@ -1,4 +1,4 @@
-
+<link href="./style.css" rel="stylesheet">
 
 <table> 
     <tr><th colspan=2> místa </th></tr>
@@ -152,27 +152,3 @@
 **Wo** steht dein Wagen? - Kde stojí tvé auto?
 **Wann** kommt ihr zurück? - Kdy se vratíte?
 **Wie** hast du das repariert? - Jak jsi to opravil?
-
-
-<style>
-table, td, tr {
-  border-collapse: separate !important;
-  text-align:center;
-  border: none;
-  background-color: white;
-}
-th {
-  border: 0px solid #c6cbd1 !important;
-  border-bottom: 1px solid #c6cbd1 !important;
-}
-td {
-  border: 0px solid black !important;
-}
-.hVertical {
-    font-weight: bold;
-    border-right: 1px solid lightgray !important;
-}
-.word {
-  text-align:left;
-}
-</style>
