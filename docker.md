@@ -1,3 +1,79 @@
+https://www.domysee.com/blogposts/reverse-proxy-nginx-docker-compose
+
+# Dockerfile
+
+
+
+# docker-compose.yml
+version:
+services: 
+  image:
+  container_name:
+  volumes:
+    * defines the persistent storage for docker containers
+    * if application writes somewhere no volumes is defined, that data will be last when container stops
+    * map specific file or directorz into the container `- ./nginx.conf:/etc/nginx/nginx.conf`
+    * named volumes can be specified similar to networks in root entry `volumes: ` `- "someVolume:/etc/something"`
+  ports:
+  networks:
+    * specifies which container can talk to each other
+    * I can then refers to container by name `http://serviceName`
+  expose:
+  environment:
+    * environment variables for the application in container
+    * !!! overrides once in files
+    * `- ENV=development`
+    * `- APPLICATION_URL=http://somepath`
+
+networks:
+volumes:
+
+
+# Nginx
+```conf
+http {
+  server {
+    server_name your.server.url;
+
+    location /yourService1 {
+      proxy_pass http://localhost:80;
+      rewrite ^/yourService1(.*)$ $1 break;
+    }
+
+    location /yourService2 {
+      proxy_pass http://localhost:5000;
+      rewrite ^/yourService1(.*)$ $1 break;
+    }
+  }
+
+  server {
+    server_name another.server.url;
+
+    location /yourService1 {
+      proxy_pass http://localhost:80;
+      rewrite ^/yourService1(.*)$ $1 break;
+    }
+
+    location /yourService3 {
+      proxy_pass http://localhost:5001;
+      rewrite ^/yourService1(.*)$ $1 break;
+    }
+  }
+}
+```
+
+`server` 
+  * configuration specifies a virtual server, where each can have its own rules.
+  * The server_name defines which urls or IP addresses virtual server responds to.
+`location`
+  * defines where to route incoming traffic
+  * `proxy_pass` sets the new url, with `rewrite` the url is rewritten so that it fits the service (`rewrite ^/myService(.*)$ $1 break;` will remove myService from url)
+
+
+# Nginx inside Docker
+
+
+
 image - is binaries, libraries and sourcecode that runs the application
 container - running instance of that image
 

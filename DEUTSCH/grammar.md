@@ -36,17 +36,12 @@
 # členy
 
 <table> 
-    <tr><th rowspan=2>Rod</th><th colspan=2> Člen </th></tr>
-    <tr><th>určitý</th><th>neurčitý</th></tr>
-    <tr>
-        <td class="hVertical">mužský</td><td>der</td>  <td>ein</td>
-    </tr>
-    <tr>
-        <td class="hVertical">ženský</td><td>die</td>  <td>eine</td>
-    </tr>
-    <tr>
-        <td class="hVertical">střední</td><td>das</td>  <td>ein</td>
-    </tr>
+    <tr><th rowspan=5>M</th><th colspan=1> Ž </th><th colspan=1> St </th><th colspan=1> Pl </th></tr>
+    <tr><th colspan=1>rod</th><th rowspan=1>M</th><th colspan=1> Ž </th><th colspan=1> St </th><th colspan=1> Pl </th></tr>
+    <tr><td>1.p</td><td>der</td><td>die</td><td>das</td><td>die</td></tr>
+    <tr><td>2.p</td><td>des</td><td>der</td><td>des</td><td>der</td></tr>
+    <tr><td>3.p</td><td>dem</td><td>der</td><td>dem</td><td>den</td></tr>
+    <tr><td>4.p</td><td>den</td><td>die</td><td>das</td><td>die</td></tr>
 </table>
 
 <table class="examples">
