@@ -291,6 +291,27 @@ RGB: `rgb(r,g,b)`
 
 hexadecimal: `#00cjfi`
 
+
+## TRICKS
+
+### To show on hover with transitions
+show item with transition from bottom to top `.container`, `.item`
+
+```css
+.item {
+  transform: scaleY(0);    
+  transform-origin: bottom;
+  transition: transform 0.26s ease;
+
+  height: 28px;
+  position: absolute;....
+}
+.container:hover .item {
+  transform: scaleY(1);
+}
+
+```
+
 ## QUESTIONS
 what is a box model or what are box model properties? [answer](Box Models)
 what is specificity? [answer](#Specifity)

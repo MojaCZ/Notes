@@ -1,0 +1,35 @@
+.examples {
+  font-size: 12px;
+  line-height: 13px;
+}
+.GE, .CZ {
+  text-align: left;
+}
+.CZ {
+  font-style: italic;
+}
+.examples th {
+  font-size: 15px;
+  line-height: 30px;
+}
+
+table, td, tr {
+  border-collapse: separate !important;
+  text-align: center;
+  border: none;
+  background-color: white;
+}
+th {
+  border: 0px solid #c6cbd1 !important;
+  border-bottom: 1px solid #c6cbd1 !important;
+}
+td {
+  border: 0px solid black !important;
+}
+.hVertical {
+    font-weight: bold;
+    border-right: 1px solid lightgray !important;
+}
+.word {
+  text-align:left;
+}
