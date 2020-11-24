@@ -46,3 +46,46 @@ fmt.Println(*p) // 1
 fmt.Println(x)  // 2
 
 ```
+
+```go
+// with the pointers, I can change variable in function
+func incr(p *int) int {
+  *p++ // increments what p points to; does not change p
+  return *p
+}
+v := 1
+incr(&v)  // v is now 2
+fmt.Println(incr(&v)) // "3" and v is now 3
+```
+
+## New
+Another way to create a variable. The expression `new(T)` creates an unnamed variable of type T, initializes it to zero value of T, and returns its address, which is a variable of type *T.
+```go
+p := new(int) // p, of type *int, points to an unnamed int variable
+fmt.Println(*p) // "0"
+*p = 2  // sets the unnamed variable int to 2
+fmt.Println(*p) // "2"
+```
+
+## Variable lifetime
+Is the interval of time in which it exists as the program executes. The package-level variable lives the entire execution of the program. The local variable lives untill it becomes *unreachable*, then it's storage may be recycled. The GO decides if the variable will be in stack or heap.
+
+**stack**
+* stores temporary variables created by function
+* is a linear data structure
+* can't be resized
+
+**heap**
+* stores global variables
+* is a hierarchical data structure
+* can be resized
+
+## Type declarations
+Defines a new named type that has the same underlying type as an existing type. Provides a way to seperate different and incompatible uses of underlying type so thay can't be mixed unintentionaly.
+
+```go
+type Celsius float64
+type Fahrenheit float64
+```
+
+## Package initialization
