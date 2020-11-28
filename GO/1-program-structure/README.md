@@ -89,3 +89,14 @@ type Fahrenheit float64
 ```
 
 ## Package initialization
+1) package-level variables in the order thay are declared (dependencies first). In case of multiple files they are initialized in the orderin which thay are given to compiler.
+2) init functions presented in files (in the order thay are declared) `func init() {...}`
+3) packages are initilaized one by one from back (I need package to be init before using it)
+
+## Scope
+```go
+if x := f(a); x == 0 {
+  // do something
+}
+fmt.Println(x)  // x is undefined here
+```
