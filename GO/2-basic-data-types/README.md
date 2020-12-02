@@ -49,6 +49,7 @@ fmt.Printf("%d %[1]x %#[1]x %#[1]X/n", x)  // 3735928559 deadbeef 0xdeadbeef 0XD
 
 runes `%c` and `%q`
 floats `%g` `%e` `%f`
+types `%t, %T`
 
 # Strings and Byte Slice
 mainly packages: `bytes`, `strings`, `strconv`, `unicode`

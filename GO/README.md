@@ -1,6 +1,7 @@
 I LIKE:
 * NO unused variables - forces me to write clean code without unused variables.
 * forces me to handle errors
+* field tags of structures (for JSON, database, ...) `Year int \`json:release\``
 
 I DISLIKE:
 * long errors handling
