@@ -82,6 +82,11 @@ type Employee struct {
   Name string
   Address string
 }
+peter := Employee{
+		ID:   123456,
+    Name: "AHOJ",
+    Address: "Prague"
+	}
 ```
 
 ## Field tags
@@ -91,3 +96,42 @@ Color bool `json:"color,omitempty"`
 ```
 
 ## Methods
+* Methids are done with **methods receiver**
+* Go doesn't use *this* or *self*
+* I call method with a selector (it selects the appropriate method from the receiver)
+* We can define methods for any type
+
+```go
+func (p Point) Distance(q Point) float64 {
+  return math.Hypot(q.X - p.X, q.Y-p.Y)
+}
+```
+
+To update receiver variable, attach receiver to pointer type. If any method takes a pointer, all methods of that receiver should do so.
+```go
+func (p *Point) ScaleBy(factor float64) {
+  p.X *= factor
+  p.Y *= factor
+}
+
+r := &Point{1, 2}
+r.ScaleBy(2)
+
+p := Point{1, 2}
+pptr := &p
+pptr.ScaleBy(2)
+
+q := Point{1, 2}
+(&p).ScaleBy(2)
+```
+
+### Constructor
+```go
+type Thing struct {...}
+
+func NewThing(someParameter string) *Thing {
+  p := new(Thing)
+  p.something = someParameter
+  return p
+}
+```

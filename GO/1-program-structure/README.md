@@ -100,3 +100,15 @@ if x := f(a); x == 0 {
 }
 fmt.Println(x)  // x is undefined here
 ```
+
+## escape loop
+```go
+for{break}
+
+someName:
+for {
+  for{
+    break someName
+  }
+}
+```

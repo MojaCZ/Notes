@@ -3,6 +3,9 @@ not equal parallel
 
 => Breaking up the program into independently executable tascs whitch can run at the same time.
 
+ex.1. I have clock and I want to send to client each second time. If client requests connection I can process this concurrently so all clients can receive time
+
+
 **gorutine** `go functionName()`
 * will not wait for function to finish, run it at background and continue executin next line
 * main function is also a gorutine, when it finishes, program will stop all gorutins init
